@@ -114,7 +114,8 @@
 
                 $('<img/>', {
                     src: slide_background_img
-                }).appendTo($('<div/>', {
+                }).css("width", this.options.slideWidth + "px"
+                ).appendTo($('<div/>', {
                     class: slide_background_class
                 }).prependTo(slide));
                 
@@ -188,6 +189,19 @@
 
             this.$el.removeData();
         },
+        transformProperty: function(el, value) {
+            el.css({
+                // "-webkit-backface-visibility": "hidden",
+                // "-moz-backface-visibility": "hidden",
+                // "-ms-backface-visibility": "hidden",
+                // "backface-visibility": "hidden",
+
+                // "-webkit-perspective": "1000",
+                // "-moz-perspective": "1000",
+                // "-ms-perspective": "1000",
+                // "perspective": "1000"
+            });
+        }
 
     };
 
